@@ -6,8 +6,17 @@ import { Component } from '@angular/core';
     <h1>
       {{title}}
     </h1>
-    <app-gf-search></app-gf-search>
-    <app-gf-list></app-gf-list>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <app-gf-search></app-gf-search>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <app-gf-list></app-gf-list>
+      </div>
+    </div>
+
     `,
   styles:[`
     h1 {
