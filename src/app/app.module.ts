@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { GfSearchComponent } from './gf-search/gf-search.component';
-import { GithubFetchService } from './github-fetch.service'
+import { GithubFetchService } from './github-fetch.service';
+import { GfListComponent } from './gf-list/gf-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    GfSearchComponent
+    GfSearchComponent,
+    GfListComponent
   ],
   imports: [
     BrowserModule,
