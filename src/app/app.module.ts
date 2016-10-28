@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { GfSearchComponent } from './gf-search/gf-search.component';
+import { GithubFetchService } from './github-fetch.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GfSearchComponent
   ],
   imports: [
     BrowserModule,

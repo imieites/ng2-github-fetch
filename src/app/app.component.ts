@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <h1>
       {{title}}
     </h1>
+    <app-gf-search></app-gf-search>
     `,
   styles:[`
     h1 {
