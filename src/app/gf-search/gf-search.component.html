@@ -1,8 +1,11 @@
 <div>
   <div class="input-group">
-      <input type="text" class="form-control" placeholder="Ingresar usuario ...">
+      <input type="text" class="form-control" placeholder="Ingresar usuario ..."  [(ngModel)]="myQuery" >
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Buscar</button>
+        <button class="btn btn-default"
+        type="button"
+        (click)="setNewUserQuery(myQuery)"
+        [disabled]="myQuery.length < 1">Buscar</button>
       </span>
     </div><!-- /input-group -->
 
