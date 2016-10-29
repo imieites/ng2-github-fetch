@@ -1,10 +1,11 @@
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Item 1
-  </li>
-  <li class="list-group-item">
-    <span class="badge">5</span>
-    Item 2
-  </li>
-</ul>
+<div *ngIf="usersList.length > 0">
+  <ul class="list-group">
+    <li *ngFor="let user of usersList" class="list-group-item">
+      <span class="badge"><span class="glyphicon glyphicon-star"></span></span>
+      <b>{{user.login}}</b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
+    </li>
+  </ul>
+</div>
+<div *ngIf="usersList.length < 1">
+  <div class="well">No hay usuarios para mostrar.</div>
+</div>
