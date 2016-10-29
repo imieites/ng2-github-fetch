@@ -28,4 +28,11 @@ export class GfListComponent implements OnInit {
     });
   }
 
+  isFavorito(login:string){
+    return this.gfService.isFavorito(login);
+  }
+
+  toggleFavorito(login:string){
+    return this.gfService.toggleFavorito(login);
+  }
 }

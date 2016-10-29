@@ -5,7 +5,8 @@
   <div *ngIf="usersList.length > 0">
     <ul class="list-group">
       <li *ngFor="let user of usersList" class="list-group-item">
-        <span class="badge"><span class="glyphicon glyphicon-star"></span></span>
+          <span *ngIf="isFavorito(user.login)" (click)="toggleFavorito(user.login)" class="badge"><span class="glyphicon glyphicon-star"></span></span>
+          <span *ngIf="!isFavorito(user.login)" (click)="toggleFavorito(user.login)" class="badge"><span class="glyphicon glyphicon-star-empty"></span></span>
         <b><a routerLink="/user/{{user.login}}">{{user.login}}</a></b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
       </li>
     </ul>
