@@ -8,7 +8,7 @@ import {GithubFetchService} from '../github-fetch.service';
 })
 export class GfListComponent implements OnInit {
   usersList = [];
-
+  loading:boolean = false;
 
   constructor(private gfService:GithubFetchService) {
     gfService.userSearchQuery$.subscribe(value =>{
@@ -21,9 +21,10 @@ export class GfListComponent implements OnInit {
   }
 
   getUserList(nameQuery:string){
-    //let resource:string = '/search/users?q=';
+    this.loading = true;
     this.gfService.getUserList(nameQuery).subscribe(res => {
       this.usersList = res.json()['items'];
+      this.loading = false;
     });
   }
 

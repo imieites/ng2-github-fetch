@@ -1,11 +1,16 @@
-<div *ngIf="usersList.length > 0">
-  <ul class="list-group">
-    <li *ngFor="let user of usersList" class="list-group-item">
-      <span class="badge"><span class="glyphicon glyphicon-star"></span></span>
-      <b>{{user.login}}</b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
-    </li>
-  </ul>
+<div *ngIf="loading">
+  <div class="well">Cargando usuarios ...</div>
 </div>
-<div *ngIf="usersList.length < 1">
-  <div class="well">No hay usuarios para mostrar.</div>
+<div *ngIf="!loading">
+  <div *ngIf="usersList.length > 0">
+    <ul class="list-group">
+      <li *ngFor="let user of usersList" class="list-group-item">
+        <span class="badge"><span class="glyphicon glyphicon-star"></span></span>
+        <b>{{user.login}}</b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="usersList.length < 1">
+    <div class="well">No hay usuarios para mostrar.</div>
+  </div>
 </div>

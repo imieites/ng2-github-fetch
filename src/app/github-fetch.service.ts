@@ -5,7 +5,8 @@ import { Http, Headers, Response, URLSearchParams, RequestOptionsArgs } from '@a
 
 @Injectable()
 export class GithubFetchService {
-  //baseUrl:string = 'https://api.github.com';
+  baseUrl:string = 'https://api.github.com';
+  userListEndpoint = '/search/users?q=';
 
   private _userSearchQuery = new Subject<string>();
   userSearchQuery$ = this._userSearchQuery.asObservable();
@@ -13,8 +14,8 @@ export class GithubFetchService {
   constructor(private http: Http) { }
 
   getUserList(nameQuery:string){
-    //let resource:string = '/search/users?q=';
-    return this.http.get('https://api.github.com/search/users?q=ignacio');
+    return this.http.get(this.baseUrl+this.userListEndpoint+nameQuery);
+
   }
 
   getUser(name:string){
