@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-md-offset-4">
+    <br>
+    <div class="col-md-4 col-md-offset-4">
         <app-gf-list></app-gf-list>
       </div>
     </div>
