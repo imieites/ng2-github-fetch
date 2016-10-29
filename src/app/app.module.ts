@@ -24,7 +24,7 @@ import { GfMainComponent } from './gf-main/gf-main.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: 'user', component: GfDetailComponent },
+      { path: 'user/:userName', component: GfDetailComponent },
       { path: '', component: GfMainComponent },
       { path: '**', component: GfMainComponent }
     ])

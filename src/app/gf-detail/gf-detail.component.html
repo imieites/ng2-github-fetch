@@ -1,3 +1,20 @@
-<p>
-  gf-detail works!
-</p>
+
+<div *ngIf="user" class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{user.name}}</h3>
+    </div>
+
+    <ul class="list-group">
+    <li class="list-group-item"><b>Login: </b>{{user.login}}</li>
+    <li class="list-group-item"><b>Creado: </b>{{user.created_at | date}}</li>
+    <li class="list-group-item"><b>Ubicación: </b>{{user.location}}</li>
+    <li class="list-group-item"><b>Seguidores: </b>{{user.followers}}</li>
+    <li class="list-group-item"><b>Link: </b><a href="{{user.html_url}}">{{user.html_url}}</a></li>
+
+  </ul>
+  </div>
+  <button class="btn btn-default"
+  type="button"
+  (click)="goBack()">Volver</button>
+</div>

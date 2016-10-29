@@ -6,7 +6,7 @@
     <ul class="list-group">
       <li *ngFor="let user of usersList" class="list-group-item">
         <span class="badge"><span class="glyphicon glyphicon-star"></span></span>
-        <b>{{user.login}}</b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
+        <b><a routerLink="/user/{{user.login}}">{{user.login}}</a></b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
       </li>
     </ul>
   </div>
