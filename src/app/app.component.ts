@@ -7,18 +7,8 @@ import {GithubFetchService} from './github-fetch.service';
     <h1>
       {{title}}
     </h1>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <app-gf-search></app-gf-search>
-      </div>
-    </div>
-    <div class="row">
-    <br>
-    <div class="col-md-4 col-md-offset-4">
-        <app-gf-list></app-gf-list>
-      </div>
-    </div>
-
+    <!-- Routed views go here -->
+    <router-outlet></router-outlet>
     `,
   styles:[`
     h1 {
