@@ -1,0 +1,17 @@
+<div *ngIf="loading">
+  <div class="well">Cargando usuarios ...</div>
+</div>
+<div *ngIf="!loading">
+  <div *ngIf="usersList.length > 0">
+    <ul class="list-group">
+      <li *ngFor="let user of usersList" class="list-group-item">
+          <span *ngIf="isFavorito(user.login)" (click)="toggleFavorito(user.login)" class="badge"><span class="glyphicon glyphicon-star"></span></span>
+          <span *ngIf="!isFavorito(user.login)" (click)="toggleFavorito(user.login)" class="badge"><span class="glyphicon glyphicon-star-empty"></span></span>
+        <b><a routerLink="/user/{{user.login}}">{{user.login}}</a></b> (<a href="{{user.html_url}}">{{user.html_url}}</a>)
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="usersList.length < 1">
+    <div class="well">No hay usuarios para mostrar.</div>
+  </div>
+</div>
