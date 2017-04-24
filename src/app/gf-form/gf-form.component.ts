@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 */
 
 export class GfFormComponent implements OnInit {
+  loading= false;
   model = {
     name:'',
     email:'',
@@ -20,14 +21,16 @@ export class GfFormComponent implements OnInit {
     plan:''
   }
   planes = ['Basico','Intermedio','Premium'];
-  submitted = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() { this.submitted = true; }
-
-
+  onSubmit() {
+    this.loading = true;
+    setTimeout(()=>{
+      this.loading = false;
+    }, 5000);
+  }
 }

@@ -11,6 +11,7 @@ import { GfDetailComponent } from './gf-detail/gf-detail.component'
 import { GithubFetchService } from './github-fetch.service';
 import { GfMainComponent } from './gf-main/gf-main.component';
 import { GfFormComponent } from './gf-form/gf-form.component';
+import { EqualValidator } from './validate-equal.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GfFormComponent } from './gf-form/gf-form.component';
     GfListComponent,
     GfDetailComponent,
     GfMainComponent,
-    GfFormComponent
+    GfFormComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
