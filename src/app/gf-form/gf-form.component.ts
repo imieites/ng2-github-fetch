@@ -5,6 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gf-form.component.html',
   styleUrls: ['./gf-form.component.css']
 })
+
+/**
+  Componente de prueba de Forms, + info en:
+  https://angular.io/docs/ts/latest/guide/forms.html#!#ngForm
+*/
+
 export class GfFormComponent implements OnInit {
   model = {
     name:'',
@@ -23,7 +29,5 @@ export class GfFormComponent implements OnInit {
 
   onSubmit() { this.submitted = true; }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 
 }
