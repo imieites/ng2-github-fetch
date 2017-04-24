@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 
 @Component({
   selector: 'app-gf-form',
@@ -7,7 +6,14 @@ import { User } from '../user';
   styleUrls: ['./gf-form.component.css']
 })
 export class GfFormComponent implements OnInit {
-  model = new User(19,'Logan');
+  model = {
+    name:'',
+    email:'',
+    password:'',
+    confirmPassword:'',
+    plan:''
+  }
+  planes = ['Basico','Intermedio','Premium'];
   submitted = false;
 
   constructor() { }
@@ -16,5 +22,8 @@ export class GfFormComponent implements OnInit {
   }
 
   onSubmit() { this.submitted = true; }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.model); }
 
 }
