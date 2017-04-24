@@ -10,6 +10,8 @@ import { GfListComponent } from './gf-list/gf-list.component'
 import { GfDetailComponent } from './gf-detail/gf-detail.component'
 import { GithubFetchService } from './github-fetch.service';
 import { GfMainComponent } from './gf-main/gf-main.component';
+import { GfFormComponent } from './gf-form/gf-form.component';
+import { EqualValidator } from './validate-equal.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { GfMainComponent } from './gf-main/gf-main.component';
     GfSearchComponent,
     GfListComponent,
     GfDetailComponent,
-    GfMainComponent
+    GfMainComponent,
+    GfFormComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import { GfMainComponent } from './gf-main/gf-main.component';
     HttpModule,
     RouterModule.forRoot([
       { path: 'user/:userName', component: GfDetailComponent },
+      { path: 'form', component: GfFormComponent },
       { path: '', component: GfMainComponent },
       { path: '**', component: GfMainComponent }
     ])
